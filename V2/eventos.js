@@ -7,8 +7,20 @@ MENU.forEach(function (item) {
 
     hideAllContent();
     document.querySelector(`[data-content="${action}"]`).style.display = 'block';
+
+    resetMenu();
+    item.classList.add('btn-dark');
+    item.classList.remove('btn-outline-dark');
  });
 });
+
+function resetMenu(){
+  MENU.forEach(function(item) {
+    item.classList.remove('btn-dark');
+    item.classList.add('btn-outline-dark');
+  });
+  
+}
 
 function hideAllContent() {
   CONTENTS.forEach(function(section){
